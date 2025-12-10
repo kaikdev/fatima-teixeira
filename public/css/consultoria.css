@@ -1,0 +1,218 @@
+main.consultoria {
+    background-image: url("../img/consultoria/background.webp");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+main.consultoria::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 20%;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    pointer-events: none;
+}
+main.consultoria .content {
+    padding: 3rem 1rem 0;
+    color: var(--color-blue);
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.3;
+}
+main.consultoria .area-text h1.title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    padding-bottom: 5px;
+    position: relative;
+}
+main.consultoria .area-text h1.title::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 190px;
+    height: 5px;
+    background-color: var(--color-bege);
+    pointer-events: none;
+}
+.area-list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2rem;
+    padding: 3rem 0;
+    position: relative;
+}
+.area-list .item {
+    position: relative;
+    z-index: 2;
+}
+.area-list .item p {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.area-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 116px;
+    margin: 0 auto;
+}
+.area-icon .top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 2;
+}
+.area-icon .top .circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--color-blue);
+    position: relative;
+}
+.area-icon .top .circle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.area-icon .top .circle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 4px;
+    background-color: var(--color-blue);
+}
+.area-icon .top .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--color-blue);
+    margin-left: 18px;
+}
+.circle-bottom {
+    width: 100%;
+    height: 100px;
+    border-left: 4px solid;
+    position: relative;
+    top: -40px;
+    left: 12px;
+}
+.circle-bottom::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: -10px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-blue);
+    border-radius: 50%;
+}
+.area-icon .top .circle,
+.area-icon .top .circle::after,
+.area-icon .top .circle::before,
+.area-icon .top .icon,
+.circle-bottom,
+.circle-bottom::after {
+    pointer-events: none;
+}
+.item:nth-child(2) .area-icon .circle,
+.item:nth-child(2) .area-icon .top .circle::before,
+.item:nth-child(2) .area-icon .top .icon,
+.item:nth-child(2) .circle-bottom::after {
+    background-color: var(--color-ciano);
+}
+.item:nth-child(2) .circle-bottom {
+    border-color: var(--color-ciano);
+}
+.item:nth-child(3) .area-icon .circle,
+.item:nth-child(3) .area-icon .top .circle::before,
+.item:nth-child(3) .area-icon .top .icon,
+.item:nth-child(3) .circle-bottom::after {
+    background-color: var(--color-bege);
+}
+.item:nth-child(3) .circle-bottom {
+    border-color: var(--color-bege);
+}
+.faixa {
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #cecdc9;
+    border-radius: 70px;
+    padding: 0 1rem;
+}
+.faixa::after {
+    content: '';
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+        to right,
+        transparent 0,
+        transparent 8px,
+        #fff 8px,
+        #fff 16px
+    );
+    background-size: 16px 3px;
+    background-position: center;
+    background-repeat: repeat-x;
+    background-clip: content-box;
+}
+section.mini-carrossel::after{
+    background: #EEE1DB;
+    background: linear-gradient(120deg,rgba(238, 225, 219, 1) 0%, rgba(212, 198, 192, 1) 50%, rgba(211, 176, 161, 1) 100%);
+}
+@media (min-width: 800px) {
+    .area-list .animate:nth-child(1) { transition-delay: 0.2s; }
+    .area-list .animate:nth-child(2) { transition-delay: 0.4s; }
+    .area-list .animate:nth-child(3) { transition-delay: 0.6s; }
+    .area-list .animate:nth-child(4) { transition-delay: 0.8s; }
+}
+@media (max-width: 800px) {
+    main.consultoria {
+        padding-bottom: 1rem;
+    }
+    .area-list {
+        justify-content: left;
+        max-width: 100%;
+        padding: 1.5rem 0 0;
+        gap: 1rem;
+        overflow: auto;
+    }
+    .area-list .item {
+        min-width: 200px;
+    }
+    .faixa {
+        width: calc(800px + 6rem);
+        bottom: 31px;
+    }
+}

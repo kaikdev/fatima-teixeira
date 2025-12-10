@@ -1,0 +1,40 @@
+section.saiba-mais .area-text {
+    padding: 1rem;
+}
+section.saiba-mais .area-text {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+section.saiba-mais .area-text h3 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--color-blue);
+}
+section.saiba-mais .area-text h3 a {
+    color: #fff;
+    background-color: var(--color-bege);
+    padding: 0 10px;
+}
+section.saiba-mais .area-text h3 a:hover {
+    transition: .2s;
+    background-color: var(--color-ciano);
+}
+@media (max-width: 500px) {
+    section.saiba-mais .area-text img {
+        width: 80px;
+    }
+    section.saiba-mais .area-text h3 {
+        font-size: 1.25rem;
+    }
+    section.saiba-mais .area-text {
+        gap: 10px;
+    }
+}

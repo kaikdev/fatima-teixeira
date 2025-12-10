@@ -1,0 +1,29 @@
+.breadcrumb {
+    background: #2F3977;
+    background: linear-gradient(90deg,rgba(47, 57, 119, 1) 0%, rgba(65, 86, 146, 1) 50%, rgba(97, 133, 188, 1) 100%);
+}
+.breadcrumb ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5px 1rem;
+    gap: 10px;
+}
+.breadcrumb li,
+.breadcrumb a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+}
+.breadcrumb a:hover {
+    transition: .3s;
+    color: var(--color-ciano);
+    text-decoration: underline;
+}
+@media (max-width: 500px) {
+    .breadcrumb li, .breadcrumb a {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #fff;
+    }
+}

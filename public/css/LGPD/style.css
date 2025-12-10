@@ -1,0 +1,230 @@
+:root{
+    --color_primary: var(--verde);
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    color: #011C34 !important;
+}
+section.page-terms{
+    background: #011C34;
+    background: linear-gradient(53deg, rgba(1, 28, 52, 1) 0%, rgba(0, 76, 143, 1) 100%);
+    position: relative;
+    height: auto;
+    padding-bottom: 2rem;
+    color: #fff;
+    scroll-margin-top: 180px; /* Adiciona uma margem de 80px no topo */
+    position: relative;
+    padding-top: 220px;
+}
+section.page-terms .top-info {
+    line-height: 1.5;
+}
+section.page-terms .top-info h1{
+    letter-spacing: -0.5px;
+    font-size: 30px;
+    font-weight: 600;
+}
+section.page-terms .top-info h3{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #fcfcfc;
+}
+section.page-terms .top-info h3 span{
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+section.page-terms .menu{
+    z-index: 98;
+    border-bottom: 1.5px solid #011C34;
+    background: #00437e;
+    padding: 15px;
+    padding-top: 60px;
+    padding-bottom: 0;
+    position: sticky;
+    top: 80px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+section.page-terms .menu a{
+    letter-spacing: -0.5px;
+    position: relative;
+    font-size: 16.67px;
+    height: 40px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+section.page-terms .menu a:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #011C34;
+    bottom: -2px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: all .2s ease-in-out;
+}
+section.page-terms .menu a.active:before,
+section.page-terms .menu a:hover:before{
+    transform: scaleX(1);
+}
+section.page-terms .menu a:hover,
+section.page-terms .menu a.active{
+    font-weight: 600;
+}
+main article{
+    scroll-margin-top: 180px; /* Adiciona uma margem de 80px no topo */
+    padding-top: 60px;
+    padding-bottom: 100px;
+    border-bottom: 1.5px solid #011C34;
+}
+main article:last-child{
+    border-bottom: 0;
+}
+main h1{
+    width: fit-content;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    position: relative;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+}
+main h1:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 5px;
+    height: 70%;
+    background-color: #011C34;
+}
+main h2{
+    font-weight: 600;
+    font-size: 16.67px;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+main p{
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+main strong{
+    font-weight: 600;
+    text-transform: uppercase;
+}
+main a{
+    font-weight: 500;
+    font-style: italic;
+    text-decoration: underline !important;
+}
+main ul,
+main ol{
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+main ul li,
+main ol li{
+    font-size: 15px;
+    margin-bottom: 15px;
+
+}
+
+.backToTop{
+    z-index: 99999;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0;
+    right: 200px;
+    font-size: 20.83px;
+    padding: 7px 15px;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    background-color: #000;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.backToTop p{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    fill: #fff;
+}
+@keyframes pulse_arrow {
+    to{
+        transform: translateY(3px);
+    }
+}
+.backToTop svg{
+    animation: pulse_arrow .6s infinite alternate;
+    width: 30px;
+    height: 30px;
+}
+article form{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+} 
+article form .col-2{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+article form .group-input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+article form .group-input label{
+    font-size: 13px;
+    font-weight: 600;
+} 
+article form .group-input input{
+    padding: 0 12px;
+    width: 100%;
+    height: 38px;
+    border-radius: 7px;
+    outline: 1px solid rgba(0, 0, 0, 0.315);
+    border: none;
+}
+article form .group-button {
+    margin-top: 10px;
+}
+article form .group-button button{
+    cursor: pointer;
+    background: var(--verde);
+    color: #fff;
+    border: 1px solid #0000002f;
+    outline: none;
+    padding: 3px 22px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+@media(max-width: 768px){
+    .backToTop{
+        right: 20px;
+    }
+    main .content{
+        padding: 0;
+    }
+    article form{
+        width: 100%;
+    }
+    section.page-terms .menu{
+        display: none;
+    }
+}
