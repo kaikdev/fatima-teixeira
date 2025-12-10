@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title') • {{ getItem('client') }}</title>
-    
+
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="{{ asset('favicon/favicon-96x96.png') }}" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon/favicon.svg') }}" />
     <link rel="shortcut icon" href="{{ asset('favicon/favicon.ico') }}" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-touch-icon.png') }}" />
-    
+
     <meta name="apple-mobile-web-app-title" content="{{ getItem('client') }}" />
     <link rel="manifest" href="{{ asset('favicon/site.webmanifest') }}" />
 
@@ -47,26 +47,17 @@
     @stack('styles')
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
     @yield('head')
+
+    {!! ToastMagic::styles() !!}
 </head>
 <body>
-    @if(session()->has('success'))
-        <div class="message message-success" id="message-success">
-            <p><i class="icon-checkmark"></i> {{ session()->get('success') }}</p>
-        </div>
-    @endif
-
-    @if(session()->has('error'))
-        <div class="message message-error">
-            <p><i class="icon-x"></i> {{ session()->get('error') }}</p>
-        </div>
-    @endif
 
     @include('includes.header')
 
     @yield('content')
 
     @include('includes.footer')
-    
+
     <div class="box-float">
         <ul>
             <li>
@@ -124,16 +115,16 @@
                     <form action="" id="popup-exit" method="post">
                         @csrf
                         <div class="col-2">
-                            <input type="text" required placeholder="Nome" class="form-control" name="nome" id="nome"> 
-                            <input type="text" required placeholder="Sobrenome" class="form-control" name="sobrenome" id="sobrenome"> 
+                            <input type="text" required placeholder="Nome" class="form-control" name="nome" id="nome">
+                            <input type="text" required placeholder="Sobrenome" class="form-control" name="sobrenome" id="sobrenome">
                         </div>
 
                         <input type="email" required placeholder="E-mail" class="form-control" name="email">
-                        
+
                         <input class="input-whatsapp" type="text" required placeholder="WhatsApp" class="whatsappModalSair form-control" name="whatsapp" maxlength="15">
-    
+
                         <input type="text" style="height:0;border:0;outline:0;margin:0;position:absolute;padding:0;min-height:unset;" name="codigo" placeholder="Código"  autocomplete = “off”  maxlength="80">
-    
+
                         <div class="terms">
                             <input type="checkbox" required name="checkbox" id="termosPopup">
                             <label for="termosPopup">Concordo com os <a href="{{ route('termos') }}">termos de uso</a> e <a href="{{ route('termos') }}">privacidade</a> da {{ getItem('client') }}.</label>
@@ -171,19 +162,8 @@
 
     <script src="{{ asset('js/scripts.js') }}"></script>
 
-    @if(session()->has('success') || session()->has('error'))
-        <script>
-            function ocultMessageContent(message){
-                message.style.opacity = 0;
-                message.style.display = 'none';
-            }
-            setTimeout(function() {
-                var successMessage = document.getElementById('message-success');
-                ocultMessageContent(successMessage);
-            }, 5000);
-        </script>
-    @endif
-    
+    {!! ToastMagic::scripts() !!}
+
     <!-- Btn mobile -->
     <script>
         let btnMobile = document.querySelectorAll('header .btnMobile')

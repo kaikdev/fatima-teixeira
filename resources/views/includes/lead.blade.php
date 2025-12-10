@@ -12,19 +12,20 @@
                 <span>{!! $subtitle !!}</span>
             </h2>
 
-            <form action="#">
+            <form action="{{ route('lead-submit') }}" method="POST">
+                @csrf
                 <div class="item-input">
                     <label for="name">Nome</label>
-                    <input type="text" id="name" required>
+                    <input type="text" id="name" name="nome" required>
                 </div>
 
                 <div class="item-input">
                     <label for="whatsapp">WhatsApp</label>
-                    <input type="text" id="whatsapp" required>
+                    <input type="text" id="whatsapp" name="whatsapp" required>
                 </div>
 
                 <div class="area-termos">
-                    <input id="termos" name="checkbox" type="checkbox">
+                    <input id="termos" name="checkbox" type="checkbox" required>
 
                     <label for="termos">Concordo com os <a href="#">Termos de Uso</a> e <a href="#">Privacidade</a> da Fátima Teixeira</label>
                 </div>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LeadSubmitController;
 
 Route::get('/', function () {
     return view('pages.index');
@@ -25,3 +26,6 @@ Route::get('/cursos', function () {
 Route::get('/contato', function () {
     return view('pages.contato');
 })->name('contato');
+
+
+Route::post('/lead-submit', [LeadSubmitController::class, 'submit'])->name('lead-submit');
